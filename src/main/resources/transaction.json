@@ -1,0 +1,16 @@
+[
+	{
+		"amount":"9710.00",
+		"customerRef":"4401",
+		"flightId":"UNITEDER952015-06-19",
+		"region":"EU",
+		"transactionId":"181948488"
+	},
+	{
+		"amount":"1710.00",
+		"customerRef":"4402",
+		"flightId":"UNITEDER952015-06-19",
+		"region":"US",
+		"transactionId":"181948298"
+	}
+]	

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:wsc="http://www.mulesoft.org/schema/mule/wsc" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/wsc http://www.mulesoft.org/schema/mule/wsc/current/mule-wsc.xsd">
+	<http:request-config name="HTTP_Request_configuration" doc:name="HTTP Request configuration" doc:id="ab16d1fe-935c-4037-b4a9-a23c7869c96f" basePath="${accounts.basepath}">
+		<http:request-connection host="${accounts.host}" port="${accounts.port}"/>
+	</http:request-config>
+	<configuration-properties doc:name="Configuration properties" doc:id="a3650c5e-bc16-41cb-98a4-6d2cd49092d8" file="config.yaml" />
+	<wsc:config name="Web_Service_Consumer_Config" doc:name="Web Service Consumer Config" doc:id="7d5a364e-c20a-4fa8-b012-5eb271aca22d" >
+		<wsc:connection wsdlLocation="${transaction.wsdl}" service="${transaction.service}" port="${transaction.port}" address="${transaction.address}">
+			<wsc:web-service-security actor="http://schemas.xmlsoap.org/soap/actor/next" />
+		</wsc:connection>
+	</wsc:config>
+	<http:request-config name="HTTP_Request_configuration_POST" doc:name="HTTP Request configuration" doc:id="49856f7a-95b2-4f74-b453-a630277aee31" basePath="${accounts_transaction.basepath}">
+		<http:request-connection host="${accounts_transaction.host}" port="${accounts_transaction.port}" />
+	</http:request-config>
+</mule>

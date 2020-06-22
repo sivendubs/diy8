@@ -1,0 +1,19 @@
+accounts:
+  host: "accounts-sbs-njclabs.us-e2.cloudhub.io"
+  port: "80"
+  path: "/accounts"
+  basepath: "/api"
+
+transaction:
+  wsdl: "http://apdev-accounts-ws.cloudhub.io/api/transactions?wsdl"
+  port: "TransactionServicePort"
+  service: "TransactionServiceService"
+  address: "http://apdev-accounts-ws.cloudhub.io/api/transactions"
+  
+accounts_transaction:
+  host: "apdev-accounts-ws.cloudhub.io"
+  port: "80"
+  path: "/accounts_transactions"
+  basepath: "/api"
+    
+  
